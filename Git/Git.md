@@ -9,6 +9,7 @@ git commit -m '备注'
 git pull <origin> <master> //--allow-unrelated-histories 
 git push -u <origin> <master> 
 ```
+
 ```go
 
 1.预览将要删除的文件
