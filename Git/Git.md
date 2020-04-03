@@ -30,7 +30,7 @@ origin 默认远程仓库
 master 默认本地分支
 ```
 
-### 一、Git工作流程![](.\picture\1.png)
+### 一、Git工作流程![](./picture/1.png)
 
 * Workspace：工作区
 * Index / Stage：暂存区
@@ -63,13 +63,13 @@ git commit后同步index的目录树到本地仓库，方便从下一步通过gi
 
 下面这幅图更加直接阐述了四个区域之间的关系，可能有些命令不太清楚，没关系，下部分会详细介绍。
 
-![](.\picture\2.png)
+![](./picture/2.png)
 
 
 
 ### 二、常用Git命令
 
-![](.\picture\3.png)
+![](./picture/3.png)
 
 
 
@@ -77,12 +77,12 @@ git commit后同步index的目录树到本地仓库，方便从下一步通过gi
 
 #### HEAD
 
-![](.\picture\4.png)
+![](./picture/4.png)
 在掌握具体命令前，先理解下HEAD。
 
 HEAD，它始终指向当前所处分支的最新的提交点。你所处的分支变化了，或者产生了新的提交点，HEAD就会跟着改变。
 #### add
-![](.\picture\5.png)
+![](./picture/5.png)
 
 add相关命令很简单，主要实现将工作区修改的内容提交到暂存区，交由git管理。
 
@@ -92,7 +92,7 @@ add相关命令很简单，主要实现将工作区修改的内容提交到暂�
 | **git add [file1]** | **添加指定文件到暂存区**             |
 
  #### commit
- ![](.\picture\5.png)
+ ![](./picture/5.png)
 commit相关命令也很简单，主要实现将暂存区的内容提交到本地仓库，并使得当前分支的HEAD向后移动一个提交点。
 
 | **git commit -m [message]**         | **提交暂存区到本地仓库,message代表说明信息** |
@@ -101,7 +101,7 @@ commit相关命令也很简单，主要实现将暂存区的内容提交到本�
 | **git commit --amend -m [message]** | **使用一次新的commit，替代上一次提交**   |
 
 #### branch
-![](.\picture\6.png)
+![](./picture/6.png)
 
 涉及到协作，自然会涉及到分支，关于分支，大概有展示分支，切换分支，创建分支，删除分支这四种操作。
 |**git branch**|**列出所有本地分支**|
@@ -115,7 +115,7 @@ commit相关命令也很简单，主要实现将暂存区的内容提交到本�
 |**git push origin --delete [branch-name]** | **删除远程分支** |
 
 #### merge
-![](.\picture\7.png)
+![](./picture/7.png)
 merge命令把不同的分支合并起来。如上图，在实际开放中，我们可能从master分支中切出一个分支，然后进行开发完成需求，中间经过R3,R4,R5的commit记录，最后开发完成需要合入master中，这便用到了merge。
 
 | **git fetch [remote]** | **merge之前先拉一下远程仓库最新代码** |
@@ -124,10 +124,10 @@ merge命令把不同的分支合并起来。如上图，在实际开放中，我
 
 一般在merge之后，会出现conflict，需要针对冲突情况，手动解除冲突。主要是因为两个用户修改了同一文件的同一块区域。如下图所示，需要手动解除。
 
-![](.\picture\8.png)
+![](./picture/8.png)
 
 #### rebase
-![](.\picture\9.png)
+![](./picture/9.png)
 rebase又称为衍合，是合并的另外一种选择。
 
 在开始阶段，我们处于new分支上，执行git rebase dev，那么new分支上新的commit都在master分支上重演一遍，最后checkout切换回到new分支。这一点与merge是一样的，合并前后所处的分支并没有改变。git rebase dev，通俗的解释就是new分支想站在dev的肩膀上继续下去。rebase也需要手动解决冲突。
@@ -163,7 +163,7 @@ A---B---D---E---C'---F' test, master复制代码
 如果你想要一个干净的，没有merge commit的线性历史树，那么你应该选择git rebase如果你想保留完整的历史记录，并且想要避免重写commit history的风险，你应该选择使用git merge
 
 #### reset
-![](.\picture\10.png)
+![](./picture/10.png)
 
 reset命令把当前分支指向另一个位置，并且相应的变动工作区和暂存区。
 
@@ -175,12 +175,12 @@ reset命令把当前分支指向另一个位置，并且相应的变动工作区
 
 #### revert
 
-![](.\picture\11.png)
+![](./picture/11.png)
 git revert用一个新提交来消除一个历史提交所做的任何修改。
 
 #### revert与reset的区别
 
-#### ![](.\picture\12.png)
+#### ![](./picture/12.png)
 
 * git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit。
 * 在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。因为git revert是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，导致这部分改变不会再次出现，减少冲突。但是git reset是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入，产生很多冲突。关于这一点，不太理解的可以看这篇文章。
