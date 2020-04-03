@@ -1,6 +1,6 @@
 # Test
 
-![ 1 ](F:\Person file\手机备份\其他相册\WeiXin\wx_camera_1547391389272.jpg)
+![ 1 ](https://cdn.pixabay.com/photo/2020/03/27/18/37/nature-4974546_1280.jpg)
 
 *this is a testing file*
 
