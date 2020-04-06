@@ -129,7 +129,11 @@ merge命令把不同的分支合并起来。如上图，在实际开放中，我
 ![](./picture/8.png)
 
 #### rebase
+<<<<<<< HEAD
 ![](\picture\9.png)
+=======
+![](./picture/9.png)
+>>>>>>> 415438eca27d6fb218a9d6de8b8b16e17c8d4604
 rebase又称为衍合，是合并的另外一种选择。
 
 在开始阶段，我们处于new分支上，执行git rebase dev，那么new分支上新的commit都在master分支上重演一遍，最后checkout切换回到new分支。这一点与merge是一样的，合并前后所处的分支并没有改变。git rebase dev，通俗的解释就是new分支想站在dev的肩膀上继续下去。rebase也需要手动解决冲突。
