@@ -141,7 +141,7 @@ $$
 
 #### 高斯分布
 
-![image-20200406161603952](C:\Users\adminxue\AppData\Roaming\Typora\typora-user-images\image-20200406161603952.png)
+![image-20200406161603952](res/image-20200406161603952.png)
 
 
 
